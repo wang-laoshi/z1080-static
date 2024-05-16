@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "file": "bootstrap.min.css",
+  "sources": [
+    "bootstrap.css"
+  ],
+  "names": [
+    "margin",
+    "padding",
+    ".navbar",
+    ".navbar-brand"
+  ],
+  "mappings": "AAAA,KAAK,CAAC,KAAT,CAAqBC,KAAT,CAAoC,KAAK,IAAI,KAAK,CAAK,KAAN...",
+  "sourceRoot": ""
+}
