@@ -1,0 +1,14 @@
+# 使用阿里云的 Nginx 镜像作为基础镜像
+FROM anolis-registry.cn-zhangjiakou.cr.aliyuncs.com/openanolis/nginx-accel:1.22.1-23
+
+# 将自定义的 Nginx 配置文件复制到容器中的 /etc/aa_nginx 目录下
+COPY nginx.conf /etc/aa_nginx/nginx.conf
+
+# 将项目的 static 目录复制到容器中的指定位置
+COPY ../z1080/z1080-bootstrap/src/main/resources/static /usr/share/nginx/html/
+
+# 暴露 80 端口
+EXPOSE 80 81
+
+# 启动 aa_nginx 服务器，并指定配置文件
+CMD ["aa_nginx", "-c", "/etc/aa_nginx/nginx.conf", "-g", "daemon off;"]
